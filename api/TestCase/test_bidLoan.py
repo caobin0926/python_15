@@ -69,7 +69,7 @@ class TestBidloan:
             case.result = 'FAIL'
             self.log.getlogs('info', '测试结果：{}'.format(case.result))
             self.log.getlogs('error', '原因：{}'.format(e))
-            raise e
+            # raise e
         finally:
             try:
                 TestBidloan.ex.set_write(case.case_id, reps1.text, case.result)

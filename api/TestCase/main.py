@@ -1,5 +1,7 @@
 from api.comon import paths
 import pytest
-
-pytest.main(["-s", "--alluredir", "E:\python-allure\\api\\resport"])
+import sys
+sys.path.append('../')
+# print(sys.path)
+pytest.main(["-s", "--alluredir", "../\\report"])
 
