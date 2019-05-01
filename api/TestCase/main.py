@@ -1,4 +1,3 @@
-from api.comon import paths
 import pytest
 import sys
 sys.path.append('./')
