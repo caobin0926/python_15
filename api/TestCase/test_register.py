@@ -47,5 +47,6 @@ class TestRegister:
             self.logger.getlogs('info', '测试结果：{}'.format(case.result))
 
     def teardown_class(self):
+        TestRegister.ex.colse_excel()
         self.req_request.sessionclose()
         self.logger.getlogs('info','------------测试完成------------')

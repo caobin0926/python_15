@@ -46,5 +46,6 @@ class TestAudit:
             self.logger.getlogs('info', '测试结果：{}'.format(case.result))
 
     def teardown_class(self):
-        self.req_request.sessionclose()
+        TestAudit.ex.colse_excel()
+        self.request.sessionclose()
         self.logger.getlogs('info', '------------执行完登录接口测试用例------------')

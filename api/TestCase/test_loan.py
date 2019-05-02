@@ -53,6 +53,7 @@ class TestLoan:
             self.logger.getlogs('info', '测试结果：{}'.format(cases.result))
 
     def teardown_class(self):
+        TestLoan.ex.colse_excel()
         self.request.sessionclose()
         self.my_msql.close_mysql()
         self.logger.getlogs('info', '------------执行完登录接口测试用例------------')

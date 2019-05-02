@@ -54,11 +54,11 @@ class TestBidloan:
         if int(case.case_id) == 5 and case.actual['msg'] == '加标成功':
             sql = "select id from  future.loan where memberid='{}'".format(
                 eval(case.data)['memberId'])  # 将标的ID写入到TestData类属性loan_id
-            print(sql)
+            # print(sql)
             self.resutl = self.my_sql.read_mysql(sql)
             # print(self.resutl)
             setattr(TestData, 'loan_id', self.resutl['id'])
-            print('类属性loan_id值：{}'.format(TestData.loan_id))
+            # print('类属性loan_id值：{}'.format(TestData.loan_id))
 
         try:
             assert eval(case.expected)['status'] == case.actual['status']
@@ -78,6 +78,7 @@ class TestBidloan:
             allure.attach('{}'.format(case.result), '断言结果')
 
     def teardown_class(self):
+        TestBidloan.ex.colse_excel()
         self.log.getlogs('info', '------------执行测试用例完成------------')
         self.request.sessionclose()
         self.my_sql.close_mysql()

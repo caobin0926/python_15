@@ -30,7 +30,7 @@ class TestRecharge:
         try:
             reqs = self.rep.request(case.method, case.url, eval(case.data))
             case.actual = json.loads(reqs.text)
-            print(reqs.text)
+            # print(reqs.text)
             self.logger.getlogs('debug', '响应参数：{}'.format(case.actual))
 
             allure.attach('{}'.format(eval(case.expected)), '预期结果')
@@ -48,5 +48,6 @@ class TestRecharge:
             self.logger.getlogs('info', '测试结果：{}'.format(case.result))
 
     def teardown_class(self):
+        TestRecharge.ex1.colse_excel()
         self.logger.getlogs('info', Fore.YELLOW + '------------执行完测试用例------------')
         self.rep.sessionclose()

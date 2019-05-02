@@ -45,7 +45,7 @@ class Excel:
             case.data = self.sheet.cell(row, 5).value
             case.expected = self.sheet.cell(row, 6).value
             data.append(case)
-            self.wb.close()
+            # self.wb.close()
         return data
 
     # 将数据写入到excel表格中
@@ -54,6 +54,9 @@ class Excel:
         self.sheet.cell(int(case_id) + 1, 7, value=actual)
         self.sheet.cell(int(case_id) + 1, 8, value=result)
         self.wb.save(self.file_name)
+        # self.wb.close()
+
+    def colse_excel(self):
         self.wb.close()
 
 
