@@ -13,7 +13,7 @@ enum34==1.1.6
 et-xmlfile==1.0.1
 idna==2.7
 jdcal==1.4
-lxml==4.3.3
+lxml==4.6.5
 more-itertools==7.0.0
 namedlist==1.7
 numpy==1.16.2
